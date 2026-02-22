@@ -566,7 +566,7 @@ tbody tr:nth-child(10) { animation-delay: 0.20s; }
   .podium-card {
     width: 100%;
     max-width: unset;
-    min-height: unset !important;
+    min-height: 400px !important;
   }
 
   .player-index {
