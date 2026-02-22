@@ -1,6 +1,11 @@
 import first from '../assets/king.png';
-import second from '../assets/player.png';
-import third from '../assets/thinker.png';
+import third from '../assets/player.png';
+import second from '../assets/thinker.png';
+
+import firstindex from '../assets/1.png';
+import secondindex from '../assets/2.png';
+import thirdindex from '../assets/3.png';
+
 import outer from '../assets/outer.png';
 import { Player } from './types';
 import { winPct } from './leaderboardUtils';
@@ -37,6 +42,19 @@ function getPodiumClass(index: number): string {
   }
 }
 
+function getPodiumIndex(index: number): string {
+  switch(index) {
+    case 0:
+      return firstindex;
+    case 1:
+      return secondindex;
+    case 2:
+      return thirdindex;
+    default: 
+      return firstindex;
+  }
+}
+
 function Hero({ topPlayers }: HeroProps) {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -68,6 +86,7 @@ function Hero({ topPlayers }: HeroProps) {
 
             const podiumImage = getPodiumImage(playerIndex);
             const podiumClass = getPodiumClass(playerIndex);
+            const podiumIndex = getPodiumIndex(playerIndex);
 
             return (
               <div key={player.pid} className={`podium-card ${podiumClass}`}>
@@ -79,6 +98,7 @@ function Hero({ topPlayers }: HeroProps) {
                 </div>
                 <div className="podium-divider"></div>
                 <div className="player-details">
+                  <div className="player-index"><img src={podiumIndex} alt="player index" /></div>
                   <div className="player-name">{player.name}</div>
                   <div className="player-tag">{player.tag}</div>
                   <div className="podium-stats">

@@ -71,7 +71,7 @@ body {
 
 .podium {
   display: flex;
-  align-items: stretch;
+  align-items: flex-end;
   justify-content: center;
   gap: 25px;
   max-width: 800px;
@@ -104,11 +104,17 @@ body {
   transform: translateY(-4px); 
 }
 
-/* .podium-card.first {
-  padding-top: 36px;
-  background: rgba(255,255,255,0.22);
-  border: 1.5px solid rgba(255,255,255,0.4);
-} */
+.podium-card.first {
+  min-height: 380px;
+}
+
+.podium-card.second {
+  min-height: 350px;
+}
+
+.podium-card.third {
+  min-height: 310px;
+}
 
 .podium-card.first .rank-badge {
   background: var(--accent);
@@ -161,6 +167,12 @@ body {
 
 .podium-divider {
   height: 150px;
+}
+
+.player-index {
+  position: absolute;
+  top: -40px;
+  right: 20px;
 }
 
 .player-name {
@@ -395,7 +407,7 @@ body {
 
 .table-wrap {
   border-radius: 16px;
-  overflow: hidden;
+  overflow: auto;
   box-shadow: 0 4px 24px rgba(75,86,210,0.10);
   border: 1px solid var(--border);
 }
@@ -552,7 +564,13 @@ tbody tr:nth-child(10) { animation-delay: 0.20s; }
   }
 
   .podium-card {
+    width: 100%;
     max-width: unset;
+    min-height: unset !important;
+  }
+
+  .player-index {
+    top: -10px;
   }
 
   .filter-select {
