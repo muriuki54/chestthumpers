@@ -538,4 +538,49 @@ export const tournaments: Tournament[] = [
       },
     ]
   },
+  {
+    date: "23/01/2026",
+    winner: "arc05",
+    winningTeam: "Bayern Munich",
+    topScorer: "Haaland",
+    topAssists: "",
+    players: [
+      {
+        pid: "cha01",
+        w: 2,
+        d: 0,
+        l: 1,
+        gf: 11,
+        ga: 5,
+        team: "Bayern Munich"
+      },
+      {
+        pid: "lee02",
+        w: 3,
+        d: 0,
+        l: 0,
+        gf: 16,
+        ga: 5,
+        team: "France"
+      },
+      {
+        pid: "amo04",
+        w: 0,
+        d: 0,
+        l: 3,
+        gf: 3,
+        ga: 14,
+        team: "Barcelona"
+      },
+      {
+        pid: "sam03",
+        w: 1,
+        d: 0,
+        l: 2,
+        gf: 4,
+        ga: 10,
+        team: "Manchester City"
+      },
+    ]
+  },
 ];
