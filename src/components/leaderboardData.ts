@@ -539,10 +539,10 @@ export const tournaments: Tournament[] = [
     ]
   },
   {
-    date: "23/01/2026",
-    winner: "arc05",
-    winningTeam: "Bayern Munich",
-    topScorer: "Haaland",
+    date: "24/04/2026",
+    winner: "lee02",
+    winningTeam: "France",
+    topScorer: "Mbappe",
     topAssists: "",
     players: [
       {
