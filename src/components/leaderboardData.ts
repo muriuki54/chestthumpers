@@ -30,6 +30,12 @@ export const players: Player[] = [
     name: 'Flex Ndets',
     tag: 'OG-kambaman',
     emoji: '🏋🏽‍♀️'
+  },
+  {
+    pid: 'machine',
+    name: 'Terminator T800',
+    tag: 'nintendo-switch',
+    emoji: '🤖'
   }
 ];
 
@@ -580,6 +586,96 @@ export const tournaments: Tournament[] = [
         gf: 4,
         ga: 10,
         team: "Manchester City"
+      },
+    ]
+  },
+  {
+    date: "29/05/2026",
+    winner: "cha01",
+    winningTeam: "Inter",
+    topScorer: "Thuram",
+    topAssists: "",
+    players: [
+      {
+        pid: "cha01",
+        w: 5,
+        d: 1,
+        l: 0,
+        gf: 33,
+        ga: 15,
+        team: "Inter"
+      },
+      {
+        pid: "lee02",
+        w: 3,
+        d: 1,
+        l: 2,
+        gf: 24,
+        ga: 16,
+        team: "Real Madrid"
+      },
+      {
+        pid: "amo04",
+        w: 1,
+        d: 1,
+        l: 4,
+        gf: 10,
+        ga: 17,
+        team: "Barcelona"
+      },
+      {
+        pid: "machine",
+        w: 1,
+        d: 1,
+        l: 4,
+        gf: 11,
+        ga: 30,
+        team: "Bayern Munich"
+      },
+    ]
+  },
+  {
+    date: "19/08/2026",
+    winner: "cha01",
+    winningTeam: "Bayern Munich",
+    topScorer: "Kane",
+    topAssists: "",
+    players: [
+      {
+        pid: "cha01",
+        w: 4,
+        d: 0,
+        l: 2,
+        gf: 24,
+        ga: 19,
+        team: "Bayern Munich"
+      },
+      {
+        pid: "lee02",
+        w: 2,
+        d: 1,
+        l: 3,
+        gf: 19,
+        ga: 20,
+        team: "Real Madrid"
+      },
+      {
+        pid: "amo04",
+        w: 3,
+        d: 1,
+        l: 2,
+        gf: 20,
+        ga: 25,
+        team: "France"
+      },
+      {
+        pid: "machine",
+        w: 2,
+        d: 0,
+        l: 4,
+        gf: 20,
+        ga: 19,
+        team: "Barcelona"
       },
     ]
   },
