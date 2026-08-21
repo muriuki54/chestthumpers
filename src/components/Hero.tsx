@@ -8,7 +8,8 @@ import thirdindex from '../assets/3.png';
 
 import outer from '../assets/outer.png';
 import { Player } from './types';
-import { winPct } from './leaderboardUtils';
+import { tournaments } from './leaderboardData';
+import { tournamentsWon } from './leaderboardUtils';
 import { useState, useEffect } from 'react';
 
 type EnrichedPlayer = Player & Required<Pick<Player, 'w' | 'd' | 'l' | 'gf' | 'ga'>>;
@@ -111,8 +112,8 @@ function Hero({ topPlayers }: HeroProps) {
                       <div className="pstat-label">Goals</div>
                     </div>
                     <div className="pstat">
-                      <div className="pstat-val">{winPct(player)}%</div>
-                      <div className="pstat-label">Win %</div>
+                      <div className="pstat-val">{tournamentsWon(player.pid, tournaments)}</div>
+                      <div className="pstat-label">Titles</div>
                     </div>
                   </div>
                 </div>

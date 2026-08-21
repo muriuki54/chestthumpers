@@ -5,9 +5,10 @@ import Hero from './components/Hero';
 import LeaderboardTable from './components/LeaderboardTable';
 import { tournaments, players } from './components/leaderboardData';
 import { Player, Tournament } from './components/types';
+import { tournamentsWon } from './components/leaderboardUtils';
 
 function App() {
-  const [sortFilter, setSortFilter] = useState<string>('winpct');
+  const [sortFilter, setSortFilter] = useState<string>('tournamentsWon');
   const [seasonFilter, setSeasonFilter] = useState<string>('');
   const [selectedTournamentIndex, setSelectedTournamentIndex] = useState<number>(-1);
 
@@ -67,19 +68,14 @@ function App() {
           case 'goals':
             primary = b.gf - a.gf;
             break;
-          case 'winpct': {
-            const aWinPct = (a.w / (a.w + a.d + a.l)) * 100;
-            const bWinPct = (b.w / (b.w + b.d + b.l)) * 100;
-            primary = bWinPct - aWinPct;
+          case 'tournamentsWon':
+            primary = tournamentsWon(b.pid, tournaments) - tournamentsWon(a.pid, tournaments);
             break;
-          }
           case 'gd':
             primary = (b.gf - b.ga) - (a.gf - a.ga);
             break;
           default:
-            const aWinPct = (a.w / (a.w + a.d + a.l)) * 100;
-            const bWinPct = (b.w / (b.w + b.d + b.l)) * 100;
-            primary = bWinPct - aWinPct;
+            primary = tournamentsWon(b.pid, tournaments) - tournamentsWon(a.pid, tournaments);
         }
         
         // If primary sort is equal, sort by goal difference
@@ -107,7 +103,7 @@ function App() {
         onSeasonChange={setSeasonFilter}
         onTournamentChange={setSelectedTournamentIndex}
       />
-      <LeaderboardTable players={tournamentPlayers} />
+      <LeaderboardTable players={tournamentPlayers} showTitles={selectedTournamentIndex === -1} />
     </div>
   );
 }

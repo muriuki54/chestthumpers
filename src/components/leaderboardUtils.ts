@@ -1,9 +1,9 @@
-import { Player } from './types';
+import { Player, Tournament } from './types';
 
 type PlayerStats = Required<Pick<Player, 'w' | 'd' | 'l' | 'gf' | 'ga'>>;
 
-export function winPct(player: PlayerStats): number {
-  return Math.round((player.w / (player.w + player.d + player.l)) * 100);
+export function tournamentsWon(pid: string, tournaments: Tournament[]): number {
+  return tournaments.filter((tournament) => tournament.winner === pid).length;
 }
 
 export function gd(player: PlayerStats): number {

@@ -1,11 +1,13 @@
 import { Player } from './types';
-import { gd, rankClass, rankLabel, winPct } from './leaderboardUtils';
+import { tournaments } from './leaderboardData';
+import { gd, rankClass, rankLabel, tournamentsWon } from './leaderboardUtils';
 
 interface LeaderboardTableProps {
   players: Array<Player & Required<Pick<Player, 'w' | 'd' | 'l' | 'gf' | 'ga'>>>;
+  showTitles: boolean;
 }
 
-function LeaderboardTable({ players }: LeaderboardTableProps) {  
+function LeaderboardTable({ players, showTitles }: LeaderboardTableProps) {
   return (
     <div className="table-section">
       <div className="table-title">All Players - Season Stats</div>
@@ -24,18 +26,17 @@ function LeaderboardTable({ players }: LeaderboardTableProps) {
               <th>GF</th>
               <th>GA</th>
               <th>GD</th>
-              <th>Win %</th>
+              {showTitles && <th>Titles</th>}
               <th>Rank</th>
             </tr>
           </thead>
           <tbody id="tableBody">
             {players.map((player, index) => {
               const rank = index + 1;
-              const pct = winPct(player);
+              const wins = tournamentsWon(player.pid, tournaments);
               const diff = gd(player);
               const diffStr = diff > 0 ? `+${diff}` : diff;
               const diffClass = diff > 0 ? 'stat-good' : diff < 0 ? 'stat-bad' : '';
-              const pctClass = pct >= 60 ? 'stat-good' : pct >= 40 ? 'stat-mid' : 'stat-bad';
 
               return (
                 <tr key={player.pid}>
@@ -58,14 +59,7 @@ function LeaderboardTable({ players }: LeaderboardTableProps) {
                   <td>{player.gf}</td>
                   <td className="stat-bad">{player.ga}</td>
                   <td className={diffClass}>{diffStr}</td>
-                  <td>
-                    <div className="win-bar-wrap">
-                      <div className="win-bar">
-                        <div className="win-bar-fill" style={{ width: `${pct}%` }} />
-                      </div>
-                      <span className={pctClass}>{pct}%</span>
-                    </div>
-                  </td>
+                  {showTitles && <td>{wins}</td>}
                   <td>
                     <span className={`rank-pill ${rankClass(rank)}`}>{rankLabel(rank)}</span>
                   </td>

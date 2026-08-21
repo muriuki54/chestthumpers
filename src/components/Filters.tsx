@@ -44,7 +44,7 @@ function Filters({
         <option value="">Sort By</option>
         <option value="wins">Most Wins</option>
         <option value="goals">Most Goals</option>
-        <option value="winpct">Win %</option>
+        <option value="tournamentsWon">Most Titles</option>
         <option value="gd">Goal Difference</option>
       </select>
     </div>
