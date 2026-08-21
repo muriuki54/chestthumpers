@@ -679,4 +679,49 @@ export const tournaments: Tournament[] = [
       },
     ]
   },
+  {
+    date: "21/08/2026",
+    winner: "cha01",
+    winningTeam: "Bayern Munich",
+    topScorer: "Kane",
+    topAssists: "",
+    players: [
+      {
+        pid: "cha01",
+        w: 4,
+        d: 2,
+        l: 0,
+        gf: 32,
+        ga: 17,
+        team: "Bayern Munich"
+      },
+      {
+        pid: "lee02",
+        w: 3,
+        d: 2,
+        l: 1,
+        gf: 29,
+        ga: 21,
+        team: "Real Madrid"
+      },
+      {
+        pid: "amo04",
+        w: 0,
+        d: 1,
+        l: 5,
+        gf: 14,
+        ga: 34,
+        team: "France"
+      },
+      {
+        pid: "machine",
+        w: 2,
+        d: 1,
+        l: 3,
+        gf: 20,
+        ga: 23,
+        team: "England"
+      },
+    ]
+  },
 ];
